@@ -5,6 +5,12 @@ public class Jogador {
 	private String nome;
 	private int escolha_zero_um;
 	private int escolha_par_impar;
+	public boolean isPar() {
+		return par;
+	}
+
+	private boolean par = false;
+	private boolean impar = false;
 	private boolean capitao = false;
 	private int time;
 	
@@ -43,6 +49,16 @@ public class Jogador {
 	}
 	public void setTime(int time) {
 		this.time = time;
+	}
+	public void setPar(boolean par) {
+		this.par = par;
+	}
+	public boolean isImpar() {
+		return impar;
+	}
+
+	public void setImpar(boolean impar) {
+		this.impar = impar;
 	}
 	
 	
