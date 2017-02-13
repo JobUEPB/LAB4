@@ -34,19 +34,6 @@ public class Main {
 				break;
 			}
 		}
-		
-//		System.out.print(menu.pedeNomeJogador(2));
-//		String nome2 = lerDados.lerNome();
-//		System.out.print(menu.pedeNomeJogador(2));
-//		String nome3 = lerDados.lerNome();
-//		Jogador jogador2 = new Jogador(nome2);
-//		Jogador jogador3 = new Jogador(nome3);
-//		
-//		System.out.print(menu.escolhaZeroOuUm(jogador2));
-//		lerDados.zeroUm(jogador2);
-//		System.out.print(menu.escolhaZeroOuUm(jogador3));
-//		lerDados.zeroUm(jogador3);
-//				
 	}
 
 }
