@@ -1,34 +1,52 @@
 package entidades;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Main {
 
 	public static void main(String[] args) {
 		
-		
+		Menu menu = new Menu();
 		Scanner scan = new Scanner(System.in);
-		
-		Jogador jogador1 = new Jogador("Job");
-		Jogador jogador2 = new Jogador("Joao");
-		Jogador jogador3 = new Jogador("Pedra");
-		
 		Leitura lerDados = new Leitura();
-
-		System.out.println("Escolhendo Capitão A " + System.lineSeparator());
+		ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
+		Sorteio sort = new Sorteio();
 		
+		for (int i = 1; i <= 3; i++) {
+			System.out.print(menu.pedeNomeJogador(i));
+			String nome = lerDados.lerNome();
+			Jogador jogador = new Jogador(nome);
+			jogadores.add(jogador);
+		}
+		for (Jogador jogador : jogadores) {
+			System.out.print(menu.escolhaZeroOuUm(jogador));
+			lerDados.zeroUm(jogador);
+		}
+		sort.zeroOuUm(jogadores);
 		
-		System.out.println(jogador1.getNome() + " escolha zero ou um: ");
-		lerDados.zeroUm(jogador1);
+		for (Jogador jogador : jogadores) {
+			if(!jogador.isCapitao()){
+				System.out.print(menu.getParImpar());
+				
+				jogador.setEscolhaParImpar(lerDados.lerEscolhaParImpar());
+				break;
+			}
+		}
 		
-		System.out.println(jogador1.getEscolha_zero_um());
-		
-		System.out.println(jogador1.getNome() + " par ou impar ");
-		
-		lerDados.imparPar(jogador1);
-		
-		System.out.println(jogador1.getEscolha_par_impar());
-		
+//		System.out.print(menu.pedeNomeJogador(2));
+//		String nome2 = lerDados.lerNome();
+//		System.out.print(menu.pedeNomeJogador(2));
+//		String nome3 = lerDados.lerNome();
+//		Jogador jogador2 = new Jogador(nome2);
+//		Jogador jogador3 = new Jogador(nome3);
+//		
+//		System.out.print(menu.escolhaZeroOuUm(jogador2));
+//		lerDados.zeroUm(jogador2);
+//		System.out.print(menu.escolhaZeroOuUm(jogador3));
+//		lerDados.zeroUm(jogador3);
+//				
 	}
 
 }

@@ -6,32 +6,53 @@ public class Leitura {
 
 	private Scanner scan = new Scanner(System.in);
 
-	public int zeroUm(Jogador jogador) {
-
-		jogador.setEscolha_zero_um(scan.nextInt());
-
+	public void zeroUm(Jogador jogador) {
+		jogador.setEscolhaZeroUm(scan.nextInt());
 		if (jogador.getEscolha_zero_um() != 0 && jogador.getEscolha_zero_um() != 1) {
-			System.out.println("Escolha numero incorreto! " + System.lineSeparator() + "Apenas zero ou um"
-					+ System.lineSeparator() + "Digite novamente: ");
+			System.out.println("Escolha incorreta! "
+								+ System.lineSeparator()
+								+ "Apenas zero ou um"
+								+ System.lineSeparator()
+								+ "Digite novamente: ");
 			zeroUm(jogador);
 		}
-		return 0;
 	}
 	
 	public int imparPar(Jogador jogador){
-		
-		jogador.setEscolha_par_impar(scan.nextInt());
-		
-		if(jogador.getEscolha_par_impar()>10 || jogador.getEscolha_par_impar() <0){
-			System.out.println("Escolha invalida! " + System.lineSeparator() + "Apenas numeros de 0 a 10"
-					+ System.lineSeparator() + "Digite novamente: ");
-			
-			imparPar(jogador);
+		int num = (scan.nextInt());
+		if(num>10 || num <0){
+			System.out.println("Escolha invalida! "
+								+ System.lineSeparator() + "Apenas numeros de 0 a 10"
+								+ System.lineSeparator() + "Digite novamente: ");
+		}	
+		return num;
+	}
+	
+	public String lerNome(){
+		String nome = null;
+		while(scan.hasNext()){
+			if(scan.hasNextLine()){
+				nome = scan.nextLine();
+				return nome;
+			}else{
+				nome = scan.next();
+			}
 		}
-		
-		
-		return 0;
-		
+		return nome;
+	}
+	
+	public String lerEscolhaParImpar(){
+		String nome = null;
+		while(scan.hasNext()){
+			if(scan.hasNextLine()){
+				nome = scan.nextLine();
+				if(nome.toUpperCase().equals("PAR") || nome.toUpperCase().equals("IMPAR"))
+					return nome;
+			}else{
+				nome = scan.next();
+			}
+		}
+		return nome;
 	}
 
 }

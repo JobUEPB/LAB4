@@ -1,45 +1,37 @@
 package entidades;
 
-public class Sorteio {
+import java.util.ArrayList;
 
-	private Jogador jogadorA;
-	private Jogador jogadorB;
-	private Jogador jogadorC;
-	private boolean capitao = true;
+public class Sorteio {
 	
-	public void zeroOuUm(Jogador jogA,Jogador jogB, Jogador jogC){
-		int numJogA = jogA.getEscolha_zero_um();
-		int numJogB = jogB.getEscolha_zero_um();
-		int numJogC = jogC.getEscolha_zero_um();
-		boolean jogo = true;
+	public void zeroOuUm(ArrayList<Jogador> jogadores){
+		int numJogA = jogadores.get(0).getEscolha_zero_um();
+		int numJogB = jogadores.get(1).getEscolha_zero_um();
+		int numJogC = jogadores.get(2).getEscolha_zero_um();
 		
-		while(jogo){
+		while(true){
 			if(numJogA == numJogB && numJogA == numJogC){
 				System.out.println("Empate!! Joguem novamente");
-				jogo =  true;					
-			}else if(numJogA == numJogB){
-				jogadorC.setCapitao(true);
-				jogo = false;
+				break;					
 			}else if(numJogC == numJogB){
-				jogadorB.setCapitao(true);
-				jogo = false;
+				jogadores.get(0).setCapitao(true);
+				break;	
+			}else if(numJogC == numJogA){
+				jogadores.get(1).setCapitao(true);
+				break;	
+			}else if(numJogA == numJogB){
+				jogadores.get(2).setCapitao(true);
+				break;	
 			}
 		}
 	}
 	
-	public void escolhePar(Jogador jogA,Jogador jogB){
-		jogA.setPar(true);
-		jogB.setImpar(true);
-	}
-	
-	public void parOuImpar(Jogador jogA,Jogador jogB){
-		int numA = jogA.getEscolha_par_impar();
-		int numB = jogB.getEscolha_par_impar();
-		
-		if(numA + numB % 2 == 0 ){
-			
+	public String parOuImpar(int numA, int numB){
+		int soma = numA + numB;
+		if(soma % 2 == 0 ){
+			return "PAR";
 		}else{
-			
+			return "IMPAR";
 		}
 		
 		

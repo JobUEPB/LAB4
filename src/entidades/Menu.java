@@ -2,27 +2,25 @@ package entidades;
 
 public class Menu {
 	
+	private String zeroOuUm = " Escolha zero ou um: "; 
+	private String parImpar = " Escolha par ou impar: ";
+	public String getParImpar() {
+		return parImpar;
+	}
+
+	public void setParImpar(String parImpar) {
+		this.parImpar = parImpar;
+	}
+
+	private String msgNome = "digite o nome do Jogador ";
+
+	public String escolhaZeroOuUm(Jogador jog){
+		return jog.getNome() + this.zeroOuUm;
+	}
 	
-//	
-//	System.out.println(jogador2.getNome() + " escolha zero ou um: ");
-//
-//	
-//	System.out.println(jogador3.getNome() + " escolha zero ou um: ");
-//
-//
-//	
-//	System.out.println("Escolhendo Capitão B " + System.lineSeparator());
-//	
-//	
-//	
-//	
-//	
-//	System.out.println("Escolha impar ou par : ");
-//
-//	System.out.println("Escolha impar ou par : ");
-	
-	
-	
-	
+	public String pedeNomeJogador(int num){
+		return msgNome + num + ": ";
+	}
+
 	
 }

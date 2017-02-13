@@ -3,18 +3,11 @@ package entidades;
 public class Jogador {
 	
 	private String nome;
-	private int escolha_zero_um;
-	private int escolha_par_impar;
-	public boolean isPar() {
-		return par;
-	}
-
-	private boolean par = false;
-	private boolean impar = false;
+	private int escolhaZeroUm;
+	private String escolhaParImpar;
 	private boolean capitao = false;
 	private int time;
-	
-	
+
 	public Jogador(String nome){
 		
 		this.nome = nome;
@@ -27,16 +20,16 @@ public class Jogador {
 		this.nome = nome;
 	}
 	public int getEscolha_zero_um() {
-		return escolha_zero_um;
+		return escolhaZeroUm;
 	}
-	public void setEscolha_zero_um(int escolha_zero_um) {
-		this.escolha_zero_um = escolha_zero_um;
+	public void setEscolhaZeroUm(int escolha_zero_um) {
+		this.escolhaZeroUm = escolha_zero_um;
 	}
-	public int getEscolha_par_impar() {
-		return escolha_par_impar;
+	public String getEscolhaParImpar() {
+		return escolhaParImpar;
 	}
-	public void setEscolha_par_impar(int escolha_par_impar) {
-		this.escolha_par_impar = escolha_par_impar;
+	public void setEscolhaParImpar(String escolhaParImpar) {
+		this.escolhaParImpar = escolhaParImpar;
 	}
 	public boolean isCapitao() {
 		return capitao;
@@ -50,19 +43,5 @@ public class Jogador {
 	public void setTime(int time) {
 		this.time = time;
 	}
-	public void setPar(boolean par) {
-		this.par = par;
-	}
-	public boolean isImpar() {
-		return impar;
-	}
-
-	public void setImpar(boolean impar) {
-		this.impar = impar;
-	}
-	
-	
-	
-	
 
 }
