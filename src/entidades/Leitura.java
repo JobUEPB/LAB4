@@ -5,28 +5,51 @@ import java.util.Scanner;
 public class Leitura {
 
 	private Scanner scan = new Scanner(System.in);
+	
+	Menu texto = new Menu();
 
 	public int zeroUm(Jogador jogador) {
 
 		jogador.setEscolha_zero_um(scan.nextInt());
 
 		if (jogador.getEscolha_zero_um() != 0 && jogador.getEscolha_zero_um() != 1) {
-			System.out.println("Escolha numero incorreto! " + System.lineSeparator() + "Apenas zero ou um"
-					+ System.lineSeparator() + "Digite novamente: ");
+
+			texto.erroZeroUm();
+			
 			zeroUm(jogador);
 		}
 		return 0;
 	}
 	
-	public int imparPar(Jogador jogador){
+	
+	public void escolhaParImpar(Jogador jogador){
+		
+		String parImpar = scan.next();
+		
+		if(parImpar.equals("par"))
+			jogador.setPar(true);
+		else
+			if(parImpar.equals("impar"))
+				jogador.setImpar(true);
+			else
+			{
+
+				texto.erroEscolhaParImpar();
+				this.escolhaParImpar(jogador);
+			}
+		
+		
+		
+	}
+	
+	public int numeroImparPar(Jogador jogador){
 		
 		jogador.setEscolha_par_impar(scan.nextInt());
 		
 		if(jogador.getEscolha_par_impar()>10 || jogador.getEscolha_par_impar() <0){
-			System.out.println("Escolha invalida! " + System.lineSeparator() + "Apenas numeros de 0 a 10"
-					+ System.lineSeparator() + "Digite novamente: ");
 			
-			imparPar(jogador);
+			texto.erroNumeroParImpar();
+			numeroImparPar(jogador);
 		}
 		
 		

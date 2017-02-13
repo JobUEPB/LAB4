@@ -5,20 +5,22 @@ public class Jogador {
 	private String nome;
 	private int escolha_zero_um;
 	private int escolha_par_impar;
-	public boolean isPar() {
-		return par;
-	}
-
 	private boolean par = false;
 	private boolean impar = false;
 	private boolean capitao = false;
 	private int time;
 	
 	
+	
 	public Jogador(String nome){
 		
 		this.nome = nome;
 	}
+	
+	public boolean isPar() {
+		return par;
+	}
+	
 	
 	public String getNome() {
 		return nome;

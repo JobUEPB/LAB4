@@ -14,20 +14,36 @@ public class Main {
 		Jogador jogador3 = new Jogador("Pedra");
 		
 		Leitura lerDados = new Leitura();
-
-		System.out.println("Escolhendo Capitão A " + System.lineSeparator());
+		Menu menu = new Menu();
 		
+		menu.escolhendoCapitao("A");
 		
-		System.out.println(jogador1.getNome() + " escolha zero ou um: ");
+		menu.zeroUm(jogador1);
 		lerDados.zeroUm(jogador1);
 		
-		System.out.println(jogador1.getEscolha_zero_um());
+		menu.zeroUm(jogador2);
+		lerDados.zeroUm(jogador2);
 		
-		System.out.println(jogador1.getNome() + " par ou impar ");
+		menu.zeroUm(jogador3);
+		lerDados.zeroUm(jogador3);
 		
-		lerDados.imparPar(jogador1);
+
+		menu.escolhendoCapitao("B");
 		
-		System.out.println(jogador1.getEscolha_par_impar());
+		menu.parImpar(jogador2);
+		menu.numeroParImpar();
+		
+		
+		menu.parImpar(jogador1);
+		
+		lerDados.escolhaParImpar(jogador1);
+		
+
+		menu.numeroParImpar();
+		lerDados.numeroImparPar(jogador1);
+	
+		
+		
 		
 	}
 
