@@ -26,10 +26,10 @@ public class Leitura {
 		
 		String parImpar = scan.next();
 		
-		if(parImpar.equals("par"))
+		if(parImpar.toLowerCase().equals("par"))
 			jogador.setPar(true);
 		else
-			if(parImpar.equals("impar"))
+			if(parImpar.toLowerCase().equals("impar"))
 				jogador.setImpar(true);
 			else
 			{
@@ -37,24 +37,16 @@ public class Leitura {
 				texto.erroEscolhaParImpar();
 				this.escolhaParImpar(jogador);
 			}
-		
-		
-		
 	}
 	
 	public int numeroImparPar(Jogador jogador){
-		
 		jogador.setEscolha_par_impar(scan.nextInt());
 		
 		if(jogador.getEscolha_par_impar()>10 || jogador.getEscolha_par_impar() <0){
-			
 			texto.erroNumeroParImpar();
 			numeroImparPar(jogador);
 		}
-		
-		
 		return 0;
-		
 	}
 
 }

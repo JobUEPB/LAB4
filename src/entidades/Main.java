@@ -31,16 +31,9 @@ public class Main {
 		menu.escolhendoCapitao("B");
 		
 		menu.parImpar(jogador2);
-		menu.numeroParImpar();
-		
-		
-		menu.parImpar(jogador1);
-		
-		lerDados.escolhaParImpar(jogador1);
-		
+		lerDados.escolhaParImpar(jogador1);	
+//		menu.numeroParImpar();
 
-		menu.numeroParImpar();
-		lerDados.numeroImparPar(jogador1);
 	
 		
 		
