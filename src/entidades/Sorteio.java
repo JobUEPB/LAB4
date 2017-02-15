@@ -38,8 +38,30 @@ public class Sorteio {
 				menu.parImpar(jogador);
 				ler.escolhaParImpar(jogador);
 				break;
-			}	
+			}
 		}
+		//escolha par
+		if(jogadores.get(0).isPar()){
+			jogadores.get(1).setImpar(true);
+			jogadores.get(2).setImpar(true);
+		}else if(jogadores.get(1).isPar()){
+			jogadores.get(0).setImpar(true);
+			jogadores.get(2).setImpar(true);
+		}else if(jogadores.get(0).isPar()){
+			jogadores.get(1).setImpar(true);
+			jogadores.get(0).setImpar(true);
+		}
+		//escolha impar
+				if(jogadores.get(0).isImpar()){
+					jogadores.get(1).setPar(true);
+					jogadores.get(2).setPar(true);
+				}else if(jogadores.get(1).isImpar()){
+					jogadores.get(0).setPar(true);
+					jogadores.get(2).setPar(true);
+				}else if(jogadores.get(0).isImpar()){
+					jogadores.get(1).setPar(true);
+					jogadores.get(0).setPar(true);
+				}
 	}
 	public void ParOuImpar(){
 		String vencedor = "";

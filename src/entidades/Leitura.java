@@ -22,7 +22,7 @@ public class Leitura {
 	}
 	
 	
-	public void escolhaParImpar(Jogador jogador){
+	public String escolhaParImpar(Jogador jogador){
 		
 		String parImpar = scan.next();
 		
@@ -36,6 +36,7 @@ public class Leitura {
 				texto.erroEscolhaParImpar();
 				this.escolhaParImpar(jogador);
 			}
+		return parImpar.toLowerCase();
 	}
 	
 	public int numeroImparPar(Jogador jogador){
