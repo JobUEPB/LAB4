@@ -33,7 +33,6 @@ public class Leitura {
 				jogador.setImpar(true);
 			else
 			{
-
 				texto.erroEscolhaParImpar();
 				this.escolhaParImpar(jogador);
 			}
@@ -46,7 +45,10 @@ public class Leitura {
 			texto.erroNumeroParImpar();
 			numeroImparPar(jogador);
 		}
-		return 0;
+		return jogador.getEscolha_par_impar();
+	}
+	public String lerNome(){
+		return scan.nextLine();
 	}
 
 }

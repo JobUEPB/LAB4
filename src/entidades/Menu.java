@@ -2,27 +2,31 @@ package entidades;
 
 public class Menu {
 	
-
-	
 	public void escolhendoCapitao(String letra){
 		
-		System.out.println("Escolhendo capitão" + letra);
+		System.out.println(System.lineSeparator()
+							+"Escolhendo capitão"
+							+ letra
+							+ System.lineSeparator());
+	}
+	
+	public void perguntaNome(int n){
+		System.out.println("Qual o nome do jogador" + n + " : ");
 	}
 	
 	public void zeroUm(Jogador jogador){
 		
-		System.out.println(jogador.getNome() + " escolha zero ou um: ");
-		
+		System.out.print(jogador.getNome() + " escolha zero ou um: ");
 	}
 	
 	public void parImpar(Jogador jogador){
 		
-		System.out.println(jogador.getNome() + " escolha par ou impar: ");
+		System.out.print(jogador.getNome() + " escolha par ou impar: ");
 	}
 	
-	public void numeroParImpar(){
+	public void numeroParImpar(Jogador jogador){
 		
-		System.out.println("Digite um numero: ");
+		System.out.print(jogador.getNome() + " Digite um numero: ");
 	}
 	
 	public void erroZeroUm(){
